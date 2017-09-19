@@ -5,10 +5,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import {metaReducer} from "./common/index";
+import { TemplateModalComponent } from './template-modal/template-modal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TemplateModalComponent
   ],
   imports: [
     BrowserModule,
