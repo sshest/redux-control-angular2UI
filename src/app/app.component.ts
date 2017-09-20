@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
@@ -15,6 +15,8 @@ import * as layout from './common/layout/layout.actions';
 })
 export class AppComponent {
   public openedModalName$: Observable<any>;
+
+  @Input() modalState:string;
 
   constructor(
       private store: Store<fromRoot.AppState>

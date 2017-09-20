@@ -16,5 +16,10 @@
   <li>
     <h2><a target="_blank" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
+  <!-- Use the async pipe to get the latest broadcasted value of an observable as an input in the component -->
+  <app-template-modal [modalState]="this.openedModalName$ | async" (onCloseModal)="handleCloseModal()"></app-template-modal>
+  <button class="btn btn-outline-primary" (click)="handleOpenModal('templateFormModal')">Open modal with template</button>
+  <ng-template ngbModalContainer></ng-template>
+
 </ul>
 
