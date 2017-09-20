@@ -18,9 +18,7 @@ export class OpenModalAction {
 
 export class CloseModalAction {
     type = LayoutActionTypes.CLOSE_MODAL
-    constructor(public payload:string) {
-
-    }
+    constructor() {}
 }
 
 export type LayoutActions = OpenModalAction | CloseModalAction;

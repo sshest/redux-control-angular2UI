@@ -14,10 +14,20 @@ import * as layout from './common/layout/layout.actions';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public openedModalName$: Observable<any>;
+
   constructor(
       private store: Store<fromRoot.AppState>
   ) {
-
+    this.openedModalName$ = store.select(fromRoot.getLayoutOpenedModalName);
   }
   title = 'app';
+
+  handleOpenModal(modalName:string) {
+    this.store.dispatch(new layout.OpenModalAction(modalName));
+  }
+
+  handleCloseModal() {
+    this.store.dispatch(new layout.CloseModalAction());
+  }
 }
