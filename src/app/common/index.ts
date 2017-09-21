@@ -22,13 +22,13 @@ export const reducers = {
 development reducer version, wrapped with storeLogger
 it logs all state changes to console
  */
-const forDevelopmentReducer: Function = compose (storeLogger(), combineReducers)(reducers);
+const forDevelopmentReducer: Function = compose(storeLogger(), combineReducers)(reducers);
 
 /*
 "meta" reducer version that transfer current state and dispatched action
 to all the reducers wrapped with logger
  */
-export function metaReducer(state: any, action: any) {
+export function metaReducer(state: AppState, action: any) {
     return forDevelopmentReducer(state, action);
 }
 
@@ -37,7 +37,10 @@ export function metaReducer(state: any, action: any) {
 */
 
 //selector of layout state
-export const getLayoutState = (state: AppState) => state.layout;
+export const getLayoutState = (state: any) =>{
+    console.log(state);
+    return state.reducer.layout;
+}
 
 /*
     Selector of openedModalName from layout's state

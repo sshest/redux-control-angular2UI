@@ -2,11 +2,13 @@ import * as layout from './layout.actions';
 
 export interface State {
     /* The description of the different parts of the layout go here */
+    //layout: any
     openedModalName: string,
 }
 
 //initial layout state definition
 const initialState: State = {
+    //layout: null
     openedModalName: null
 };
 
@@ -24,7 +26,9 @@ export function reducer(state = initialState, action: layout.LayoutActions): Sta
             return Object.assign({}, state, {
                 openedModalName: null
             });
-        default: return state;
+        default:
+            //console.log(state);
+            return state;
     }
 }
 
