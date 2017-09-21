@@ -37,10 +37,10 @@ export function metaReducer(state: AppState, action: any) {
 */
 
 //selector of layout state
-export const getLayoutState = (state: any) =>{
-    console.log(state);
-    return state.reducer.layout;
-}
+// export const getLayoutState = (state: any) =>{
+//     console.log(state);
+//     return state.reducer.layout;
+// }
 
 /*
     Selector of openedModalName from layout's state
@@ -48,4 +48,5 @@ export const getLayoutState = (state: any) =>{
     createSelector passes a layout state to getOpenedModalName reducer
 */
 
-export const getLayoutOpenedModalName = createSelector(getLayoutState, fromLayout.getOpenedModalName);
+// export const getLayoutOpenedModalName = createSelector(getLayoutState, fromLayout.getOpenedModalName);
+
