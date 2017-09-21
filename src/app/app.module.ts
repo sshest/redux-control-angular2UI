@@ -6,11 +6,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import {metaReducer} from "./common/index";
 import { TemplateModalComponent } from './template-modal/template-modal.component';
+import { SidebarDynamicDirective } from './sidebar-dynamic.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateModalComponent
+    TemplateModalComponent,
+    SidebarDynamicDirective
   ],
   imports: [
     BrowserModule,
