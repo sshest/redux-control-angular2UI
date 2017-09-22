@@ -49,9 +49,8 @@ export const getLayoutState = (state: any) =>{
     createSelector passes a layout state to getOpenedModalName reducer
 */
 
-// export const getLayoutOpenedModalName = createSelector(getLayoutState, fromLayout.getOpenedModalName);
+export const getLayoutOpenedModalName = createSelector(getLayoutState, fromLayout.getOpenedModalName);
 
-export const getLayoutLeftSidenavState = createSelector(getLayoutState, fromLayout.getLeftSidenavState)
-    //(state:any) => state.leftSidebarOpened;
-export const getLayoutRightSidenavState = createSelector(getLayoutState, fromLayout.getRightSidenavState)
-    //(state:any) => state.rightSidebarOpened;
+export const getLayoutLeftSidenavState = createSelector(getLayoutState, fromLayout.getLeftSidenavState);
+
+export const getLayoutRightSidenavState = createSelector(getLayoutState, fromLayout.getRightSidenavState);

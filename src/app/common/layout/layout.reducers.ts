@@ -3,7 +3,7 @@ import * as layout from './layout.actions';
 export interface State {
     /* The description of the different parts of the layout go here */
     //layout: any
-    // openedModalName: string,
+    openedModalName: string,
     leftSidebarOpened:boolean;
     rightSidebarOpened:boolean;
 }
@@ -11,7 +11,7 @@ export interface State {
 //initial layout state definition
 const initialState: State = {
     //layout: null
-    // openedModalName: null,
+    openedModalName: '',
     leftSidebarOpened:true,
     rightSidebarOpened:false,
 
@@ -21,16 +21,16 @@ const initialState: State = {
 export function reducer(state = initialState, action: layout.LayoutActions): State {
     switch (action.type) {
         //reducers for modal state
-        // case layout.LayoutActionTypes.OPEN_MODAL:
-        //     const name = action.payload;
-        //     return Object.assign({}, state, {
-        //         openedModalName: name
-        //     });
-        // case layout.LayoutActionTypes.CLOSE_MODAL:
-        //
-        //     return Object.assign({}, state, {
-        //         openedModalName: null
-        //     });
+        case layout.LayoutActionTypes.OPEN_MODAL:
+            const name = action.payload;
+            return Object.assign({}, state, {
+                openedModalName: name
+            });
+        case layout.LayoutActionTypes.CLOSE_MODAL:
+
+            return Object.assign({}, state, {
+                openedModalName: ''
+            });
         case layout.LayoutActionTypes.CLOSE_LEFT_SIDENAV:
             {
                 return Object.assign({}, state, { leftSidebarOpened: false });
@@ -54,6 +54,6 @@ export function reducer(state = initialState, action: layout.LayoutActions): Sta
 }
 
 //opened modal name selector
-// export const getOpenedModalName = (state:State) => state.openedModalName;
+export const getOpenedModalName = (state:State) => state.openedModalName;
 export const getLeftSidenavState = (state:State) => state.leftSidebarOpened;
 export const getRightSidenavState = (state:State) => state.rightSidebarOpened;

@@ -14,22 +14,24 @@ import * as layout from './common/layout/layout.actions';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public openedModalName$: Observable<any>;
+  public openedModalName: any;
 
   @Input() modalState:string;
 
   constructor(
       private store: Store<fromRoot.AppState>
   ) {
-    //this.openedModalName$ = store.select(fromRoot.getLayoutOpenedModalName);
+    store.select(fromRoot.getLayoutOpenedModalName).subscribe((state)=>{
+      this.openedModalName = state;
+    });
   }
   title = 'app';
 
-  // handleOpenModal(modalName:string) {
-  //   this.store.dispatch(new layout.OpenModalAction(modalName));
-  // }
-  //
-  // handleCloseModal() {
-  //   this.store.dispatch(new layout.CloseModalAction());
-  // }
+  handleOpenModal(modalName:string) {
+    this.store.dispatch(new layout.OpenModalAction(modalName));
+  }
+
+  handleCloseModal() {
+    this.store.dispatch(new layout.CloseModalAction());
+  }
 }
