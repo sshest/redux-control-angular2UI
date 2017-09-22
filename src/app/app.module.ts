@@ -10,6 +10,7 @@ import { SidebarDynamicDirective } from './sidebar-dynamic.directive';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 import { RightSidebarComponent } from './right-sidebar/right-sidebar.component';
 import { SidebarToggleDirective } from './sidebar-toggle.directive';
+import { AlertListComponent } from './alerts/alerts-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SidebarToggleDirective } from './sidebar-toggle.directive';
     SidebarDynamicDirective,
     LeftSidebarComponent,
     RightSidebarComponent,
-    SidebarToggleDirective
+    SidebarToggleDirective,
+    AlertListComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@ import * as layout from './common/layout/layout.actions';
 })
 export class AppComponent {
   public openedModalName: any;
+  public alerts$: Observable<any>;
 
   @Input() modalState:string;
 
@@ -24,6 +25,7 @@ export class AppComponent {
     store.select(fromRoot.getLayoutOpenedModalName).subscribe((state)=>{
       this.openedModalName = state;
     });
+    store.select(fromRoot.getLayoutAlerts);
   }
   title = 'app';
 
@@ -33,5 +35,13 @@ export class AppComponent {
 
   handleCloseModal() {
     this.store.dispatch(new layout.CloseModalAction());
+  }
+
+  addAlert(alert) {
+    this.store.dispatch(new layout.AddAlertAction(alert));
+  }
+
+  onCloseAlert(alert:Object){
+    this.store.dispatch(new layout.RemoveAlertAction(alert));
   }
 }

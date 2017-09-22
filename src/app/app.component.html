@@ -27,6 +27,10 @@
   <div id="main-content">
     <button class="btn btn-primary" appSidebarToggle="left">Toggle Left Sidebar</button>
     <button class="btn btn-primary" appSidebarToggle="right">Toggle Right Sidebar</button>
+    <br/>
+    <alerts-list [alerts]="alerts$ | async" (closeAlert)="onCloseAlert($event)"></alerts-list>
+    <button class="btn btn-danger" (click)="addAlert({type: 'danger', message: 'This is danger alert'})">Add a danger alert</button>
+    <button class="btn btn-success" (click)="addAlert({type: 'success', message: 'This is success alert'})">Add a success alert</button>
   </div>
 </ul>
 
