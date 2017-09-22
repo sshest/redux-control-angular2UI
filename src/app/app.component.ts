@@ -25,7 +25,7 @@ export class AppComponent {
     store.select(fromRoot.getLayoutOpenedModalName).subscribe((state)=>{
       this.openedModalName = state;
     });
-    store.select(fromRoot.getLayoutAlerts);
+    this.alerts$ = store.select(fromRoot.getLayoutAlerts);
   }
   title = 'app';
 
