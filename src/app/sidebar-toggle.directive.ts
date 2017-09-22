@@ -32,8 +32,8 @@ export class SidebarToggleDirective {
     this._store.select(fromRoot.getLayoutLeftSidenavState).subscribe((state)=>{
       this.leftSidebarState = state;
     });
-    this._store.select(fromRoot.getLayoutLeftSidenavState).subscribe((state)=>{
-      this.leftSidebarState = state;
+    this._store.select(fromRoot.getLayoutRightSidenavState).subscribe((state)=>{
+      this.rightSidebarState = state;
     });
   }
 
