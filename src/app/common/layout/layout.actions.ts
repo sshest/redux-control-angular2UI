@@ -13,14 +13,15 @@ export const LayoutActionTypes = {
     //Right sidenav actions
     OPEN_RIGHT_SIDENAV: '[Layout] Open RightSidenav',
     CLOSE_RIGHT_SIDENAV: '[Layout] Close RightSidenav',
+    //Alert action types
+    ADD_ALERT: '[Layout] Add alert',
+    REMOVE_ALERT: '[Layout] remove alert',
 
 };
 
 export class OpenModalAction {
     type = LayoutActionTypes.OPEN_MODAL;
-    constructor(public payload:string) {
-
-    }
+    constructor(public payload:string) {}
 }
 
 export class CloseModalAction {
@@ -48,4 +49,14 @@ export class CloseRightSidenavAction implements Action {
     constructor(public payload?:string) { }
 }
 
-export type LayoutActions = CloseLeftSidenavAction | OpenLeftSidenavAction | CloseRightSidenavAction | OpenRightSidenavAction | OpenModalAction | CloseModalAction;
+export class AddAlertAction implements Action{
+    type = LayoutActionTypes.ADD_ALERT;
+    constructor(public payload: Object){}
+}
+
+export class RemoveAlertAction implements Action {
+    type = LayoutActionTypes.REMOVE_ALERT;
+    constructor(public  payload: Object) {}
+}
+
+export type LayoutActions = CloseLeftSidenavAction | OpenLeftSidenavAction | CloseRightSidenavAction | OpenRightSidenavAction | OpenModalAction | CloseModalAction | AddAlertAction | RemoveAlertAction;

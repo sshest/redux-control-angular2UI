@@ -6,6 +6,7 @@ export interface State {
     openedModalName: string,
     leftSidebarOpened:boolean;
     rightSidebarOpened:boolean;
+    alerts:Array<Object>;
 }
 
 //initial layout state definition
@@ -14,7 +15,7 @@ const initialState: State = {
     openedModalName: '',
     leftSidebarOpened:true,
     rightSidebarOpened:false,
-
+    alerts: [],
 };
 
 //reducer of the layout state
@@ -47,6 +48,18 @@ export function reducer(state = initialState, action: layout.LayoutActions): Sta
             {
                 return Object.assign({}, state, { rightSidebarOpened: true });
             }
+        case layout.LayoutActionTypes.ADD_ALERT: {
+            return Object.assign({}, state, {
+                alerts:[...state.alerts, action.payload]
+            })
+        }
+        case layout.LayoutActionTypes.REMOVE_ALERT: {
+            return Object.assign({}, state, {
+                alerts: state.alerts.filter(alert=>
+                    alert['message'] !== action.payload['message']
+                )
+            })
+        }
         default:
             //console.log(state);
             return state;
@@ -57,3 +70,4 @@ export function reducer(state = initialState, action: layout.LayoutActions): Sta
 export const getOpenedModalName = (state:State) => state.openedModalName;
 export const getLeftSidenavState = (state:State) => state.leftSidebarOpened;
 export const getRightSidenavState = (state:State) => state.rightSidebarOpened;
+export const getAlerts = (state:State) => state.alerts;

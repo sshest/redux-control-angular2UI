@@ -54,3 +54,5 @@ export const getLayoutOpenedModalName = createSelector(getLayoutState, fromLayou
 export const getLayoutLeftSidenavState = createSelector(getLayoutState, fromLayout.getLeftSidenavState);
 
 export const getLayoutRightSidenavState = createSelector(getLayoutState, fromLayout.getRightSidenavState);
+
+export const getLayoutAlerts = createSelector(getLayoutState, fromLayout.getAlerts);
