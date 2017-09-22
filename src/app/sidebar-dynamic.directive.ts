@@ -1,8 +1,8 @@
-import {Directive, ElementRef, Renderer, OnInit, AfterViewInit, AfterViewChecked} from '@angular/core';
+import {Directive, ElementRef, Renderer2, OnInit, AfterViewInit, AfterViewChecked} from '@angular/core';
 import {Store} from "@ngrx/store";
 import * as fromRoot from "./common/index";
 
-let $ = require('jquery');
+import $ from "jquery";
 
 @Directive({
   selector: '[appSidebarDynamic]'
@@ -30,7 +30,7 @@ export class SidebarDynamicDirective implements OnInit{
       /*
       You can use classes (addClass/removeClass) instead of
       using jQuery css(), or you can go completely vanilla
-      by using selectors such as windiw.getElementById(). .
+      by using selectors such as window.getElementById(). .
       */
       if (this.el.nativeElement.className == 'right-sidebar') {
         if (state) {

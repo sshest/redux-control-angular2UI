@@ -34,13 +34,14 @@ export function metaReducer(state: AppState, action: any) {
 
 /*
     Selectors:
+
+    selector of layout state
 */
 
-//selector of layout state
-// export const getLayoutState = (state: any) =>{
-//     console.log(state);
-//     return state.reducer.layout;
-// }
+export const getLayoutState = (state: any) =>{
+    console.log(state);
+    return state.reducer.layout;
+}
 
 /*
     Selector of openedModalName from layout's state
@@ -50,5 +51,7 @@ export function metaReducer(state: AppState, action: any) {
 
 // export const getLayoutOpenedModalName = createSelector(getLayoutState, fromLayout.getOpenedModalName);
 
-export const getLayoutLeftSidenavState = (state:any) => state.leftSidebarOpened;
-export const getLayoutRightSidenavState = (state:any) => state.rightSidebarOpened;
+export const getLayoutLeftSidenavState = createSelector(getLayoutState, fromLayout.getLeftSidenavState)
+    //(state:any) => state.leftSidebarOpened;
+export const getLayoutRightSidenavState = createSelector(getLayoutState, fromLayout.getRightSidenavState)
+    //(state:any) => state.rightSidebarOpened;

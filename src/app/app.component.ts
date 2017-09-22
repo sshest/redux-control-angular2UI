@@ -21,15 +21,15 @@ export class AppComponent {
   constructor(
       private store: Store<fromRoot.AppState>
   ) {
-    this.openedModalName$ = store.select(fromRoot.getLayoutOpenedModalName);
+    //this.openedModalName$ = store.select(fromRoot.getLayoutOpenedModalName);
   }
   title = 'app';
 
-  handleOpenModal(modalName:string) {
-    this.store.dispatch(new layout.OpenModalAction(modalName));
-  }
-
-  handleCloseModal() {
-    this.store.dispatch(new layout.CloseModalAction());
-  }
+  // handleOpenModal(modalName:string) {
+  //   this.store.dispatch(new layout.OpenModalAction(modalName));
+  // }
+  //
+  // handleCloseModal() {
+  //   this.store.dispatch(new layout.CloseModalAction());
+  // }
 }
