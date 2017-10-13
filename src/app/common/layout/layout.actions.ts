@@ -19,12 +19,12 @@ export const LayoutActionTypes = {
 
 };
 
-export class OpenModalAction {
+export class OpenModalAction implements Action {
     type = LayoutActionTypes.OPEN_MODAL;
     constructor(public payload:string) {}
 }
 
-export class CloseModalAction {
+export class CloseModalAction implements Action {
     type = LayoutActionTypes.CLOSE_MODAL;
     constructor(public payload?:string) {}
 }
